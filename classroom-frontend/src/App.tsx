@@ -23,7 +23,7 @@ function App() {
         <BrowserRouter>
             <RefineKbarProvider>
                 <ThemeProvider>
-                    <DevtoolsProvider>
+                    <DevtoolsProvider url="http://localhost:5001">
                         <Refine
                             dataProvider={dataProvider}
                             notificationProvider={useNotificationProvider()}
