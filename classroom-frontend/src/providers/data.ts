@@ -2,10 +2,6 @@ import { createDataProvider, CreateDataProviderOptions } from "@refinedev/rest";
 import { BACKEND_BASE_URL } from "@/constants";
 import { ListResponse } from "@/types";
 
-if (!BACKEND_BASE_URL) {
-  throw new Error("BACKEND_BASE_URL is not defined in .env");
-}
-
 const options: CreateDataProviderOptions = {
   getList: {
     getEndpoint: ({ resource }) => resource,
