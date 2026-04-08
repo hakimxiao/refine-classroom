@@ -8,6 +8,13 @@
       "when": 1775115510346,
       "tag": "0000_slippery_mariko_yashida",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1775628747297,
+      "tag": "0001_flat_strong_guy",
+      "breakpoints": true
     }
   ]
 }
