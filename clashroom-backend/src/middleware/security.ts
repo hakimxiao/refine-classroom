@@ -51,6 +51,16 @@ const securityMiddleware = async (
 
     const decision = await client.protect(arcjetRequest);
 
+    // Logging for debugging ngrok issues
+    if (process.env.NODE_ENV !== "production") {
+      console.log(
+        `[Arcjet] Decision: ${decision.conclusion} for ${req.method} ${req.originalUrl}`,
+      );
+      if (decision.isDenied()) {
+        console.log(`[Arcjet] Reason:`, decision.reason);
+      }
+    }
+
     if (decision.isDenied() && decision.reason.isBot()) {
       return res.status(403).json({
         error: "Forbidden",

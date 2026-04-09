@@ -16,7 +16,14 @@ const aj = arcjet({
     detectBot({
       mode: "LIVE",
       // Block all bots except the following
-      allow: ["CATEGORY:SEARCH_ENGINE", "CATEGORY:PREVIEW"],
+      allow: [
+        "CATEGORY:SEARCH_ENGINE",
+        "CATEGORY:PREVIEW",
+        "CATEGORY:TOOL",
+        "CATEGORY:MONITOR",
+        "CATEGORY:UNKNOWN",
+        "CURL", // Common for ngrok health checks/testing
+      ],
     }),
     slidingWindow({
       mode: "LIVE",
