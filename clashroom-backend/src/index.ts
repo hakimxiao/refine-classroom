@@ -4,6 +4,8 @@ AgentAPI.config();
 import express, { Request, Response } from "express";
 import cors from "cors";
 import subjectRouter from "./routes/subjects.js";
+import userRouter from "./routes/users.js";
+import classesRouter from "./routes/classes.js";
 import securityMiddleware from "./middleware/security.js";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth";
@@ -28,6 +30,8 @@ app.use(express.json());
 app.use(securityMiddleware);
 
 app.use("/api/subjects", subjectRouter);
+app.use("/api/users", userRouter);
+app.use("/api/classes", classesRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.json({ message: "Halo dari Express dengan TypeScript!" });
